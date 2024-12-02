@@ -1,7 +1,5 @@
 { A[NR]=$1; B[NR]=$2 }
 END {
-	asort(A);
-	asort(B);
 	for(i=1; i<NR+1; i++) {
 		# Not super efficient, but good enough…
 		for (j=1; j<NR+1; j++)
