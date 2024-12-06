@@ -23,11 +23,13 @@ S=0
 for i in range(3,M+3):
     for j in range(3,N+3):
         # Look for XMAS in 4 directions
-            for di in [-1,1]:
-                for dj in [-1,1]:
-                    if A[i][j]=='M' and A[i+di][j+dj]=='A' and A[i+2*di][j+2*dj]=='S' and ( (A[i][j+2*dj]=='S' and A[i+2*di][j]=='M') or (A[i][j+2*dj]=='M' and A[i+2*di][j]=='S')):
-                        S+=1
-                        print(i,j,di,dj)
+        for di in [-1,1]:
+            for dj in [-1,1]:
+                if A[i][j]=='M' and A[i+di][j+dj]=='A' and A[i+2*di][j+2*dj]=='S' and ( 
+                   (A[i][j+2*dj]=='S' and A[i+2*di][j]=='M') or
+                    (A[i][j+2*dj]=='M' and A[i+2*di][j]=='S')):
+                    S+=1
+                    print(i,j,di,dj)
 
 # Each X is counted twice
 print(S/2)

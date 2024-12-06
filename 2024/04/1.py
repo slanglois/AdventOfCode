@@ -23,10 +23,10 @@ S=0
 for i in range(3,M+3):
     for j in range(3,N+3):
         # Look for XMAS in 8 directions (well... 9 but never mind!)
-            for di in [-1,0,1]:
-                for dj in [-1,0,1]:
-                    if A[i][j]=='X' and A[i+di][j+dj]=='M' and A[i+2*di][j+2*dj]=='A' and A[i+3*di][j+3*dj]=='S':
-                        S+=1
-                        print(i,j,di,dj)
+        for di in [-1,0,1]:
+            for dj in [-1,0,1]:
+                if A[i][j]=='X' and A[i+di][j+dj]=='M' and A[i+2*di][j+2*dj]=='A' and A[i+3*di][j+3*dj]=='S':
+                    S+=1
+                    print(i,j,di,dj)
 
 print(S)
