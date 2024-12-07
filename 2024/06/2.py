@@ -44,5 +44,3 @@ for i in range(MAXY):
                 S+=1
                 print(j,i,"is looping",S)
             A[i][j]='.'
-
-print(isLooping(A,X,Y))
