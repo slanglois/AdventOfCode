@@ -21,10 +21,14 @@ def comboperand(n:int) -> int:
     print("WTF?",n)
     exit(12)
 
-N=0
+PREVN=1
+N=2991328
 OUTPUT=[]
 while PROG != OUTPUT:
-  N+=1
+  # The programs producing an output that starts with the same few digits as the input
+  # seem to happen at regular intervals of 4194304. (This number is also 2^24.)
+  # That's probably not a coincidence, so lets try skipping by this amount :-) 
+  N+=4194304
   A=N
   IP=0
   OUTPUT=[]
@@ -62,4 +66,8 @@ while PROG != OUTPUT:
         C=A//2**comboperand(PROG[IP+1])
         IP+=2
         #print("cdv",C,IP)
-  print(N,OUTPUT)
+  if OUTPUT[0:12]==PROG[0:12]:
+      print(N,N-PREVN,OUTPUT)
+      PREVN=N
+
+print(N,OUTPUT)
